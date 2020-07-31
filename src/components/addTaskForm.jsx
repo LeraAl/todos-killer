@@ -15,7 +15,7 @@ export const AddTaskForm = (props) => {
     return (
         <Form className="add-task-form" onSubmit={handleSubmit}>
             <Form.Row>
-                <Col xs={9}>
+                <Col xs={12} sm={8}>
                     <Form.Control
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
