@@ -26,3 +26,24 @@ export function getTasks() {
         }, 1000);
     });
 }
+
+export function getProjects() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve([
+                {
+                    id: 0,
+                    name: "project 0",
+                },
+                {
+                    id: 1,
+                    name: "project 1",
+                },
+                {
+                    id: 2,
+                    name: "project 2",
+                },
+            ]);
+        }, 1000);
+    });
+}

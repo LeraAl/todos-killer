@@ -18,3 +18,10 @@
 .add-task-form {
     margin-bottom: 15px;
 }
+
+.menu-header {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    color: #007bff;
+    cursor: pointer;
+}
