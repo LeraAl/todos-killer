@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 
-export const AddTaskForm = (props) => {
+import { addTodo } from "../actions";
+
+let AddTaskForm = ({ dispatch }) => {
     const [input, setInput] = useState("");
     const [date, setDate] = useState("");
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.onSubmit({ name: input, date: date && new Date(date) });
+        dispatch(addTodo({ name: input, date: date && new Date(date) }));
         setDate("");
         setInput("");
     };
@@ -25,13 +29,12 @@ export const AddTaskForm = (props) => {
                     ></Form.Control>
                 </Col>
                 <Col>
-                    <Form.Control
-                        onChange={(e) => setDate(e.target.value)}
-                        value={date}
-                        type="date"
-                    ></Form.Control>
+                    <Form.Control onChange={(e) => setDate(e.target.value)} value={date} type="date"></Form.Control>
                 </Col>
             </Form.Row>
         </Form>
     );
 };
+
+AddTaskForm = connect()(AddTaskForm);
+export default AddTaskForm;

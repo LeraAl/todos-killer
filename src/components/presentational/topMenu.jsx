@@ -1,6 +1,7 @@
 import React from "react";
-import { Filters } from "../typings/tasks";
+import { Filters } from "../../typings/tasks";
 import Nav from "react-bootstrap/Nav";
+import FilterLink from "../containers/filterLink";
 
 export const TopMenu = (props) => {
     const { onFilterChange } = props;
@@ -12,9 +13,9 @@ export const TopMenu = (props) => {
             defaultActiveKey={Filters.ALL}
             className="flex-column"
         >
-            <Nav.Link eventKey={Filters.ALL}>All</Nav.Link>
-            <Nav.Link eventKey={Filters.TODAY}>Today</Nav.Link>
-            <Nav.Link eventKey={Filters.UPCOMING}>Upcoming</Nav.Link>
+            <FilterLink filter={Filters.ALL}>All</FilterLink>
+            <FilterLink filter={Filters.TODAY}>Today</FilterLink>
+            <FilterLink filter={Filters.UPCOMING}>Upcoming</FilterLink>
         </Nav>
     );
 };
