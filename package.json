@@ -9,7 +9,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "gh": "ngh --dir=dist/todos-killer"
+    "gh": "npm run gh:build & npm run gh:publish",
+    "gh:build": "ng build --prod --base-href https://LeraAl.github.io/todos-killer/",
+    "gh:publish": "ngh --dir=dist/todos-killer"
   },
   "private": true,
   "dependencies": {
