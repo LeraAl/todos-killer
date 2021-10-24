@@ -1,0 +1,15 @@
+@import (reference) "../../../../styles.less";
+
+.task-panel {
+    margin-left: @sidebar-width;
+    padding: 2rem;
+    background-color: #F7F7F7;
+    height: calc(~"100% - " @header-height);
+    transition: margin-left 1s cubic-bezier(.4,0,.2,1);
+}
+
+@media (max-width: 750px) {
+    .task-panel {
+        margin-left: 40px;
+    }
+}
